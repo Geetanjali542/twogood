@@ -1,0 +1,546 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gilroy';
+}
+
+*::selection {
+    color: #fff;
+
+    background-color: #000;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    background-color: #F7F7F7;
+    /* this above colour is same as white because of which we can't see the diff much but the whole body
+    is of this colour */
+
+}
+
+#nav {
+    height: 120px;
+    width: 100%;
+    /* background-color: burlywood; */
+    position: fixed;
+    /* fixed pos has been given so even if we are scrolling it should not disappear to prevent disappear we have made the z index 99 of nav */
+    z-index: 99;
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 25px;
+}
+
+#nav-part1{
+    /* background-color: red; */
+    height: 82px;
+    overflow: hidden;
+    /* the hidden property hides all the other elements that comes outside the height like the second svg that is outside the 
+    height has disappeared, you can check when you comment the overflow property */
+}
+
+#nav-part1 svg{
+    display: block;
+    /* block property means ek ke niche ek svg ya elements */
+}
+
+#nav #nav-part2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+#links{
+    padding: 10px;
+
+}
+
+#nav-part2 #links a {
+    text-transform: uppercase;
+
+    text-decoration: none;
+    /* because of above property the underline of the link disappears */
+    color: #333;
+    /* above is the text color simply */
+    font-weight: 500;
+    font-size: 14px;
+    margin: 0 20px;
+    /* because of this the margin right has given space  */
+}
+
+
+
+
+
+#icons{
+    padding: 10px;
+    border-radius: 50px;
+    /* background-color: #fff; */
+    /* to understand the above property use the above background color and comment the below background color as it is same as
+     white so we won't be able to see the difference */
+    background-color: #F7F7F7
+
+}
+#nav-part2 #icons i{
+    font-size: 18px;
+    margin: 0 20px;
+    font-weight: 100;
+    
+}
+
+
+#cursor{
+    height: 180px;
+    width: 180px;
+    background-color: blanchedalmond;
+    border-radius: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%) scale(0);
+/* because of this above property the arrow moves exactly in center of cursor */
+
+
+    /* as the scale is zero so size becomes zero */
+
+}
+
+
+#page1 {
+    min-height: 100vh;
+    /* background-color: aqua; */
+    position: relative;
+    width: 100%;
+    padding: 0 1vw;
+    padding-top: 20vh;
+
+}
+
+#page1 h1 {
+    font-size: 15.8vw;
+    text-transform: uppercase;
+    font-family: futura;
+    line-height: 14vw;
+    letter-spacing: -8px;
+}
+
+#video-container {
+    height: 100vh;
+    width: 100%;
+    background-color: grey;
+    margin-top: 1vw;
+    position: relative;
+}
+
+#video-container video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#video-container #play {
+    padding: 3vw 2.2vw;
+    background-color: black;
+    color: #fff;
+    font-size: 1.3vw;
+    position: fixed;
+    text-transform: uppercase;
+    font-family: futura;
+    border-radius: 50%;
+    opacity: 0;
+    scale: 0;
+
+}
+
+#page2 {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 3vw 1vw;
+    justify-content: space-between;
+}
+
+#page2 .elem {
+    height: 100%;
+    width: 31%;
+    /* background-color: red; */
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#page2 .elem img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    scale: 1.1;
+}
+
+#page2 .elem .dets {
+    height: 60px;
+    border-radius: 50px;
+    width: 70%;
+    position: absolute;
+    z-index: 9;
+    background-color: rgb(229, 156, 186);
+
+
+}
+
+
+#page3 {
+    min-height: 120vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    /* apparaently by default the flex is in row so to wrap it evenly we used flexwrap */
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.child {
+    height: 54vh;
+    width: 38vw;
+    /* background-color: red; */
+    /* border: 2px solid #000; */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.child img{
+    height: 100%;
+    /* means jitna child utna img and because of this the img would appear inside child class and same size as child size */
+}
+
+
+@media (max-width:600px) {
+
+    #nav {
+        /* height: 100px; */
+        width: 100%;
+        /* background-color: burlywood; */
+        position: fixed;
+        z-index: 99;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 15px;
+    }
+
+    #nav #nav-part2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+    }
+
+    #links {
+        padding: 10px;
+        display: none;
+    }
+
+    #nav-part1 {
+        /* background-color: RED; */
+        height: 67px;
+        overflow: hidden;
+    }
+
+    #nav-part1 svg {
+        display: block;
+        height: 67px;
+        width: 80px;
+    }
+    #nav #twogoodlogo{
+        height: 40px;
+        margin-left: -20px;
+    }
+
+    #icons {
+        padding: 7px;
+        border-radius: 50px;
+        background-color: #F7F7F7;
+    }
+
+    #nav-part2 #icons i {
+        font-size: 15px;
+        margin: 0 20px;
+        font-weight: 100;
+    }
+
+    #page1 {
+        /* background-color: red; */
+        min-height: 70vh;
+        width: 100%;
+        padding: 0 3vw;
+        padding-top: 25vh;
+
+    }
+
+    #page1 h1 {
+        font-size: 15.5vw;
+        letter-spacing: -3px;
+    }
+
+    #video-container {
+        height: 25vh;
+        margin-top: 3vw;
+    }
+
+    #video-container #play {
+        padding: 9.5vw 7.2vw;
+        font-size: 4.5vw;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        opacity: 1;
+        scale: 1;
+        transform: translate(-50%, -50%);
+    }
+
+    #page2 {
+        min-height: 100vh;
+        width: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding: 5vw 3vw;
+        flex-direction: column;
+        justify-content: space-between;
+        /* background-color: red; */
+    }
+
+    #page2 .elem {
+        height: 100vh;
+        width: 100%;
+        /* background-color: red; */
+        overflow: hidden;
+        margin-bottom: 3vw;
+    }
+
+    #page2 .elem .dets {
+        height: 40px;
+        border-radius: 50px;
+        width: 70%;
+        position: absolute;
+        z-index: 9;
+        background-color: rgb(229, 156, 186);
+
+    }
+
+    #page3 {
+        min-height: 120vh;
+        width: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+
+    .child {
+        height: 54vh;
+        width: 88vw;
+        /* background-color: red; */
+        /* border: 2px solid #000; */
+        position: relative;
+        padding: 15vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .child img {
+        height: 100%;
+    }
+
+}
+/* ===================================================================================================== */
+/* @media (max-width:600px){
+
+    #nav {
+        height: 120px;
+        width: 100%; */
+        /* background-color: burlywood; */
+        /* position: fixed; */
+        /* fixed pos has been given so even if we are scrolling it should not disappear to prevent disappear we have made the z index 99 of nav */
+        /* z-index: 99;
+        display: flex;
+    
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 15px;
+    }
+    
+    #nav-part1{
+        background-color: red;
+        height: 67px;
+        overflow: hidden; */
+        /* the hidden property hides all the other elements that comes outside the height like the second svg that is outside the 
+        height has disappeared, you can check when you comment the overflow property */
+    /* }
+    
+    #nav-part1 svg{
+        display: block; */
+        /* block property means ek ke niche ek svg ya elements */
+        /* height: 63px;
+        width: 80px;
+    }
+
+    #nav #twogoodlogo{
+        height: 40px;
+        margin-left: -20px;
+
+    }
+    
+    #nav #nav-part2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+    }
+    
+    #links{
+        padding: 10px;
+        display: none;
+    
+    } */
+/*     
+    #nav-part2 #links a {
+        text-transform: uppercase;
+    
+        text-decoration: none;
+        /* because of above property the underline of the link disappears */
+        /* color: #333; */
+        /* above is the text color simply */
+        /* font-weight: 500;
+        font-size: 14px;
+        margin: 0 20px; */
+        /* because of this the margin right has given space  */
+    /* } */
+     */
+    
+    
+    
+    
+    /* #icons{
+        padding: 7px;
+        border-radius: 50px; */
+        /* background-color: #fff; */
+        /* to understand the above property use the above background color and comment the below background color as it is same as
+         white so we won't be able to see the difference */
+        /* background-color: #F7F7F7
+    
+    }
+    #nav-part2 #icons i{
+        font-size: 15px;
+        margin: 0 20px;
+        font-weight: 100;
+        
+    }
+
+    
+    #page1 { */
+        /* background-color: red; */
+        /* min-height: 70vh;
+        width: 100%;
+        padding: 0 3vw;
+        padding-top: 25vh;
+
+    }
+
+    #page1 h1 {
+        font-size: 15.5vw;
+        letter-spacing: -3px;
+    } */
+
+    /* #video-container {
+        height: 25vh;
+        margin-top: 3vw;
+    }
+
+    #video-container #play {
+        padding: 9.5vw 7.2vw;
+        font-size: 4.5vw;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        opacity: 1;
+        scale: 1;
+        transform: translate(-50%, -50%);
+    } */
+
+    /* #page2 {
+        min-height: 100vh;
+        width: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding: 5vw 3vw;
+        flex-direction: column;
+        justify-content: space-between; */
+        /* background-color: red; */
+    /* } */
+
+    /* #page2 .elem {
+        height: 100vh;
+        width: 100%; */
+        /* background-color: red; */
+        /* overflow: hidden;
+        margin-bottom: 3vw;
+    } */
+
+/* 
+    #page2 .elem .dets {
+        height: 40px;
+        border-radius: 50px;
+        width: 70%;
+        position: absolute;
+        z-index: 9;
+        background-color: rgb(229, 156, 186);
+    
+    
+    } */
+
+    /* #page3 {
+        min-height: 120vh;
+        width: 100%;
+        position: relative;
+        display: flex; */
+        /* apparaently by default the flex is in row so to wrap it evenly we used flexwrap */
+        /* align-items: center;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    } */
+
+
+    /* .child {
+        height: 54vh;
+        width: 88vw; */
+        /* background-color: red; */
+        /* border: 2px solid #000; */
+        /* position: relative;
+        padding: 15vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+    }
+
+
+    
+} */
+/* mine css */
+/* ============================================================================================================================= */
